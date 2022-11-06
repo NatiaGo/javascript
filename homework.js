@@ -86,15 +86,17 @@ for (let item of array) {
 // 7. შექმენით ფუნქცია, რომელსაც გადავცემთ n რაოდენობის მნიშვნელობას და დააბრუნოს   მხოლოდ დადებითი რიცხვების ჯამს:
 
 function positiveNumbers (... array){
- let sum = 0; 
-  for (let item of array){
-   if (item > 0) {
-    sum =item + sum;
+    let sum = 0; 
+     for (let item of array){
+      if (item > 0) {
+       sum =item + sum;
+       }
     }
- }
-  console.log(sum)
-}
-positiveNumbers(2, -9, 5, 11, -30, 100, -8, -11, -4, 5, -6, 80);
+     return sum;
+   }
+
+   let positiveSum = positiveNumbers(2, -9, 5, 11, -30, 100, -8, -11, -4, 5, -6, 80);
+   console.log(positiveSum)
 
 
 // 8. ფუნქციამ უნდა დააბრუნოს სახელი და გვარი ადგილის გამოტოვებით (მაგ: 'giorgi saakadze') თუ isloggedin არის true და false თუ isloggedin ფროფერთი არის false;
@@ -107,13 +109,14 @@ let user = {
 }
 
 function saakadze (user){
-  if (user.isloggedin ==true){
-    console.log('giorgi saakadze');
-  }else if (user.isloggedin == false){
-    console.log('false');
+    if (user.isloggedin ==true){
+      return user.firstname + ' ' + user.lastname;
+    }else if (user.isloggedin == false){
+      return false;
+    }
   }
-}
-saakadze (user);
+  let nameSurname = saakadze(user);
+  console.log(nameSurname);
 
 //9. შექმენით ფუნქცია რომელსაც გადაეცემა ერთი პარამეტრი. ეს პარამეტრი უნდა იყოს რიცხვების მასივი და ფუნქციამ უნდა დააბრუნოს ამ რიცხვებიდან მაქსიმალური:
 
@@ -124,9 +127,10 @@ function maxNumbers (... array){
       max = muxnumber;
      }
   }
-   console.log(max)
+   return max
  }
- maxNumbers(2, 12, 5, 11, 100, 80, 22 );
+ let max = maxNumbers(2, 12, 5, 11, 100, 80, 22 );
+ console.log(max);
 
 // 10. მოცემულია მასივი გამოიტანეთ ყველა ის რიცხვი რომელიც მეტია 0 ზე და ნაკლებია 10ზე;
 let array = [1,2,4,10,34,5,7,87]
